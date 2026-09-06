@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=com.shazid.LinuxHotspotManager
+Exec=/usr/bin/python3 /usr/lib/linux-hotspot-manager/linux-hotspot-manager-service.py
+User=root
+SystemdService=linux-hotspot-manager.service

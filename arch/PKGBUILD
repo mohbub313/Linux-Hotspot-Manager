@@ -1,0 +1,21 @@
+pkgname=linux-hotspot-manager
+pkgver=2.0.0
+pkgrel=1
+pkgdesc="Open-source Linux hotspot manager"
+arch=('any')
+license=('GPL3')
+depends=('python' 'python-gobject' 'python-dbus-next' 'gtk4' 'libadwaita' 'networkmanager' 'nftables' 'dnsmasq' 'iproute2' 'polkit')
+source=()
+
+package() {
+  install -Dm755 src/main.py "$pkgdir/usr/bin/linux-hotspot-manager"
+  install -Dm755 host/linux-hotspot-manager-service.py "$pkgdir/usr/lib/linux-hotspot-manager/linux-hotspot-manager-service.py"
+  install -Dm755 portal/server.py "$pkgdir/usr/lib/linux-hotspot-manager/portal-server.py"
+  install -Dm644 host/com.shazid.LinuxHotspotManager.service "$pkgdir/usr/share/dbus-1/system-services/com.shazid.LinuxHotspotManager.service"
+  install -Dm644 polkit/com.shazid.LinuxHotspotManager.policy "$pkgdir/usr/share/polkit-1/actions/com.shazid.LinuxHotspotManager.policy"
+  install -Dm644 systemd/linux-hotspot-manager.service "$pkgdir/usr/lib/systemd/system/linux-hotspot-manager.service"
+  install -Dm644 systemd/linux-hotspot-manager-portal.service "$pkgdir/usr/lib/systemd/system/linux-hotspot-manager-portal.service"
+  install -Dm644 data/com.shazid.LinuxHotspotManager.desktop "$pkgdir/usr/share/applications/com.shazid.LinuxHotspotManager.desktop"
+  install -Dm644 data/icon.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/com.shazid.LinuxHotspotManager.svg"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

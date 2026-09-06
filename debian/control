@@ -1,0 +1,11 @@
+Source: linux-hotspot-manager
+Section: net
+Priority: optional
+Maintainer: Linux Hotspot Manager contributors
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Package: linux-hotspot-manager
+Architecture: all
+Depends: python3, python3-dbus-next, python3-gi, gir1.2-gtk-4.0, gir1.2-adw-1, network-manager, nftables, dnsmasq, iproute2, polkitd, systemd
+Description: Open-source Linux hotspot manager
+ GTK4/libadwaita hotspot manager with privileged D-Bus service.

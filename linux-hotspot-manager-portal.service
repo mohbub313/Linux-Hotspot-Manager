@@ -1,0 +1,21 @@
+[Unit]
+Description=Linux Hotspot Manager captive portal
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/lib/linux-hotspot-manager/portal-server.py
+Restart=on-failure
+RestartSec=2
+User=linux-hotspot-manager
+Group=linux-hotspot-manager
+UMask=0077
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadWritePaths=/var/lib/linux-hotspot-manager
+
+[Install]
+WantedBy=multi-user.target

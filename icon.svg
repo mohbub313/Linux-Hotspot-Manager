@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Background -->
+  <rect x="16" y="16" width="224" height="224" rx="54" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="224" height="224" rx="54" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+
+  <!-- Protective Hotspot Shield -->
+  <path d="M128 44 L188 68 C188 120 162 172 128 196 C94 172 68 120 68 68 Z"
+        fill="url(#shieldGrad)" stroke="rgba(56,189,248,0.4)" stroke-width="3"/>
+
+  <!-- Outer Wi-Fi Wave -->
+  <path d="M72 108 C104 80 152 80 184 108"
+        fill="none" stroke="url(#waveGrad)" stroke-width="12" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Middle Wi-Fi Wave -->
+  <path d="M92 132 C112 114 144 114 164 132"
+        fill="none" stroke="url(#waveGrad)" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- Inner Wi-Fi Wave -->
+  <path d="M110 156 C120 146 136 146 146 156"
+        fill="none" stroke="url(#waveGrad)" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Core Broadcast Beacon -->
+  <circle cx="128" cy="182" r="10" fill="#ffffff" filter="url(#glow)"/>
+  <circle cx="128" cy="182" r="5" fill="#38bdf8"/>
+</svg>

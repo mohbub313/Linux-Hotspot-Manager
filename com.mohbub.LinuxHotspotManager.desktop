@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Linux Hotspot Manager
+GenericName=Wi-Fi Hotspot & Access Point Manager
+Comment=MyPublicWiFi clone for Linux - share internet, manage clients, block ads, and configure captive portal
+Exec=linux-hotspot-manager
+Icon=com.shazid.LinuxHotspotManager
+Terminal=false
+Type=Application
+Categories=Network;Wireless;Security;System;GTK;
+Keywords=wifi;hotspot;mypublicwifi;access point;share;tethering;adblock;firewall;bandwidth;captive portal;
+StartupNotify=true
+StartupWMClass=com.shazid.LinuxHotspotManager
+X-KDE-SubstituteUID=false

@@ -1,0 +1,11 @@
+src/main.py usr/lib/linux-hotspot-manager/
+host/linux-hotspot-manager-service.py usr/lib/linux-hotspot-manager/
+portal/server.py usr/lib/linux-hotspot-manager/portal-server.py
+host/com.shazid.LinuxHotspotManager.service usr/share/dbus-1/system-services/
+polkit/com.shazid.LinuxHotspotManager.policy usr/share/polkit-1/actions/
+systemd/linux-hotspot-manager.service usr/lib/systemd/system/
+systemd/linux-hotspot-manager-portal.service usr/lib/systemd/system/
+data/com.shazid.LinuxHotspotManager.desktop usr/share/applications/
+data/com.shazid.LinuxHotspotManager.metainfo.xml usr/share/metainfo/
+data/icon.svg usr/share/icons/hicolor/scalable/apps/com.shazid.LinuxHotspotManager.svg
+LICENSE usr/share/doc/linux-hotspot-manager/

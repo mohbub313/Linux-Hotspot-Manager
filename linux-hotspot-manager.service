@@ -1,0 +1,31 @@
+[Unit]
+Description=Linux Hotspot Manager privileged service
+After=dbus.service
+
+[Service]
+Type=dbus
+BusName=com.shazid.LinuxHotspotManager
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/usr/bin/python3 /usr/lib/linux-hotspot-manager/linux-hotspot-manager-service.py
+Restart=on-failure
+RestartSec=2
+User=root
+Group=root
+UMask=0077
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=false
+ProtectKernelTunables=false
+ProtectKernelModules=true
+ProtectControlGroups=true
+ReadWritePaths=/var/lib/linux-hotspot-manager /run /var/log
+NoNewPrivileges=false
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_DAC_READ_SEARCH
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+LockPersonality=true
+MemoryDenyWriteExecute=false
+
+[Install]
+WantedBy=multi-user.target
